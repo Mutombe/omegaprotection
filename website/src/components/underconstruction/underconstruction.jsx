@@ -5,9 +5,16 @@ const UnderConstruction = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-white">
       <div className="container mx-auto px-4 py-16">
-        {/* Header */}
+        {/* Header with Logo */}
         <div className="flex flex-col items-center justify-center mb-12">
-          <Shield className="w-16 h-16 text-yellow-500 mb-4" />
+          <div className="w-80 h-80 mb-6">
+            <img
+              src="/logo.png"
+              alt="Omega Protection Services Logo"
+              className="w-full h-full object-contain bg-gray-200 rounded-full"
+            />
+          </div>
+          
           <h1 className="text-4xl font-bold text-center mb-2">Omega Protection Services</h1>
           <p className="text-xl text-yellow-500">(Private) Limited</p>
         </div>
@@ -27,11 +34,11 @@ const UnderConstruction = () => {
           <div className="space-y-4">
             <div className="flex items-center justify-center">
               <Phone className="w-5 h-5 text-yellow-500 mr-2" />
-              <span>+263 772 754 460, +263 77 501 5011</span>
+              <span>+263 772 754 460, +263 24 200 2737</span>
             </div>
             <div className="flex items-center justify-center">
               <MapPin className="w-5 h-5 text-yellow-500 mr-2" />
-              <span>11/23 Mt Pleasant Heights, Harare</span>
+              <span>1123 Mt Pleasant Heights, Harare</span>
             </div>
           </div>
         </div>
