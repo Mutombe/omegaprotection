@@ -11,7 +11,7 @@ const UnderConstruction = () => {
             <img
               src="/logo.png"
               alt="Omega Protection Services Logo"
-              className="w-full h-full object-contain bg-gray-200 rounded-full"
+              className="w-full h-full object-contain bg-gray-800 rounded-full"
             />
           </div>
           
