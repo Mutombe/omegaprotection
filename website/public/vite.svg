@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Shield Background -->
+  <path 
+    d="M16 2 L2 8 L2 14 C2 21.732 7.768 29.036 16 30 C24.232 29.036 30 21.732 30 14 L30 8 Z" 
+    fill="#1a1a1a"
+    stroke="#FFD700"
+    stroke-width="1"
+  />
+  
+  <!-- Omega Symbol -->
+  <path 
+    d="M16 8 C11.582 8 8 11.582 8 16 C8 20.418 11.582 24 16 24 C20.418 24 24 20.418 24 16"
+    fill="none"
+    stroke="#FFD700"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  
+  <!-- Top Lines -->
+  <line 
+    x1="16" 
+    y1="8" 
+    x2="16" 
+    y2="10" 
+    stroke="#FFD700"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+  
+  <line 
+    x1="24" 
+    y1="16" 
+    x2="24" 
+    y2="10" 
+    stroke="#FFD700"
+    stroke-width="2"
+    stroke-linecap="round"
+  />
+</svg>
