@@ -1,179 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { Shield, Mail, Phone, MapPin, Clock, Menu, X, ChevronRight, Users, Lock, Eye, Target, Award, UserCheck, ListChecks, Headphones, MessageSquare, Send, HelpCircle, Bell, Home, FileText, ShieldCheck, Star, Package, AlertTriangle } from 'lucide-react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  Shield, Eye, Lock, Users, Target, UserCheck, 
+  Bell, Award, HelpCircle, ChevronRight,
+  Phone, Mail, MapPin, Clock
+} from 'lucide-react';
+import { Button, SectionHeader, ServiceCard, FeatureCard, ValueCard, TestimonialCard, ContactInfoCard } from '../ui/ui';
 
-// Layout Components
-const Layout = ({ children }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 text-gray-800">
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <div className="flex items-center">
-              <div className="h-12 w-12 mr-3">
-                <Shield className="h-full w-full text-yellow-600" />
-              </div>
-              <div>
-                <h1 className="font-bold text-xl text-gray-900">OMEGA</h1>
-                <p className="text-xs text-gray-600">Protection Services</p>
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <NavLink href="#home">Home</NavLink>
-              <NavLink href="#about">About</NavLink>
-              <NavLink href="#services">Services</NavLink>
-              <NavLink href="#contact">Contact</NavLink>
-            </nav>
-
-            {/* Mobile Menu Button */}
-            <button 
-              className="md:hidden text-gray-700 focus:outline-none"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t border-gray-200">
-            <div className="container mx-auto px-4 py-2">
-              <nav className="flex flex-col space-y-3">
-                <MobileNavLink href="#home" onClick={() => setMobileMenuOpen(false)}>Home</MobileNavLink>
-                <MobileNavLink href="#about" onClick={() => setMobileMenuOpen(false)}>About</MobileNavLink>
-                <MobileNavLink href="#services" onClick={() => setMobileMenuOpen(false)}>Services</MobileNavLink>
-                <MobileNavLink href="#contact" onClick={() => setMobileMenuOpen(false)}>Contact</MobileNavLink>
-              </nav>
-            </div>
-          </div>
-        )}
-      </header>
-
-      <main className="pt-20">
-        {children}
-      </main>
-
-      <Footer />
-    </div>
-  );
-};
-
-const NavLink = ({ href, children }) => (
-  <a href={href} className="font-medium text-gray-700 hover:text-yellow-600 transition-colors">
-    {children}
-  </a>
-);
-
-const MobileNavLink = ({ href, onClick, children }) => (
-  <a 
-    href={href} 
-    className="flex items-center justify-between p-2 border-b border-gray-100 text-gray-700 hover:text-yellow-600"
-    onClick={onClick}
-  >
-    <span>{children}</span>
-    <ChevronRight size={16} />
-  </a>
-);
-
-const Footer = () => (
-  <footer className="bg-gray-900 text-gray-300">
-    <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Company Info */}
-        <div>
-          <div className="flex items-center mb-4">
-            <Shield className="h-8 w-8 text-yellow-500 mr-2" />
-            <div>
-              <h3 className="font-bold text-white">OMEGA</h3>
-              <p className="text-xs">Protection Services</p>
-            </div>
-          </div>
-          <p className="text-sm mb-4">Providing integrated security solutions by combining manpower with the latest security technology.</p>
-          <div className="flex space-x-4">
-            <SocialIcon icon="facebook" />
-            <SocialIcon icon="twitter" />
-            <SocialIcon icon="linkedin" />
-          </div>
-        </div>
-
-        {/* Quick Links */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
-          <ul className="space-y-2">
-            <FooterLink href="#home">Home</FooterLink>
-            <FooterLink href="#about">About Us</FooterLink>
-            <FooterLink href="#services">Our Services</FooterLink>
-            <FooterLink href="#contact">Contact Us</FooterLink>
-          </ul>
-        </div>
-
-        {/* Contact Info */}
-        <div>
-          <h3 className="text-lg font-semibold mb-4 text-white">Contact Information</h3>
-          <ul className="space-y-3">
-            <li className="flex items-start">
-              <MapPin className="h-5 w-5 text-yellow-500 mr-2 mt-0.5" />
-              <span className="text-sm">1123 Pearl Street, Mt Pleasant, Harare</span>
-            </li>
-            <li className="flex items-center">
-              <Phone className="h-5 w-5 text-yellow-500 mr-2" />
-              <span className="text-sm">+263 772 754 460</span>
-            </li>
-            <li className="flex items-center">
-              <Phone className="h-5 w-5 text-yellow-500 mr-2" />
-              <span className="text-sm">+263 784 173 770</span>
-            </li>
-            <li className="flex items-center">
-              <Mail className="h-5 w-5 text-yellow-500 mr-2" />
-              <span className="text-sm">oprosec@gmail.com</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800 mt-8 pt-6 text-center text-sm">
-        <p>© {new Date().getFullYear()} Omega Protection Services (Pvt) Ltd. All Rights Reserved.</p>
-        <p className="mt-2 text-gray-500">
-          <a href="#" className="hover:text-yellow-500">Privacy Policy</a> • 
-          <a href="#" className="hover:text-yellow-500 mx-2">Terms of Service</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-);
-
-const FooterLink = ({ href, children }) => (
-  <li>
-    <a href={href} className="text-sm hover:text-yellow-500 transition-colors">
-      {children}
-    </a>
-  </li>
-);
-
-const SocialIcon = ({ icon }) => (
-  <a href="#" className="h-8 w-8 rounded-full bg-gray-800 flex items-center justify-center hover:bg-yellow-600 transition-colors">
-    <span className="sr-only">{icon}</span>
-    {/* Social icons would be imported/implemented here */}
-    <div className="h-4 w-4 bg-white/30 rounded-sm"></div>
-  </a>
-);
-
-// Page Components
 const HomePage = () => {
   return (
     <div>
@@ -183,30 +16,206 @@ const HomePage = () => {
       <FeaturesSection />
       <CTASection />
       <TestimonialsSection />
+      <ContactSection />
     </div>
   );
 };
 
-const Hero = () => (
+const Hero = () => {
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  
+  // Carousel images - desktop and mobile versions
+  const carouselImages = [
+    {
+      desktop: "/home1.jpg", // Replace with actual image path for production
+      mobile: "/home2m.jpg",
+      alt: "Security guards patrolling"
+    },
+    {
+      desktop: "/home2.jpg", // Replace with actual image path for production
+      mobile: "/home2m.jpg",
+      alt: "Command center operations"
+    },
+    {
+      desktop: "/home3.jpg", // Replace with actual image path for production
+      mobile: "/home3m.jpg",
+      alt: "Security technology"
+    },
+  ];
+  
+  React.useEffect(() => {
+    // Auto-rotate carousel every 5 seconds
+    const interval = setInterval(() => {
+      setCurrentSlide(prev => (prev + 1) % carouselImages.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  return (
+    <section id="home" className="relative min-h-screen flex items-center bg-gray-900 overflow-hidden">
+      {/* Carousel Background Images */}
+      {carouselImages.map((image, index) => (
+        <div 
+          key={index}
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out z-0 
+                     ${index === currentSlide ? 'opacity-50' : 'opacity-0'}`}
+        >
+          {/* Desktop Image (hidden on small screens) */}
+          <img 
+            src={image.desktop}
+            alt={image.alt}
+            className="hidden md:block object-cover w-full h-full"
+          />
+          
+          {/* Mobile Image (visible only on small screens) */}
+          <img 
+            src={image.mobile}
+            alt={image.alt}
+            className="md:hidden object-cover w-full h-full"
+          />
+        </div>
+      ))}
+      
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/60 z-0"></div>
+      
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-3xl">
+          <span className="inline-block bg-yellow-600 text-white text-sm px-3 py-1 rounded mb-4 font-medium">
+            Professional Security Services
+          </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Precision and Vigilance, Your Trusted Shield
+          </h1>
+          <p className="text-xl text-gray-200 mb-8">
+            Omega Protection Services provides integrated security solutions by combining expert manpower with the latest security technology.
+          </p>
+          
+          <div className="flex flex-wrap gap-4">
+            <Link to="/services">
+              <Button variant="primary" icon={<ChevronRight size={16} />}>
+                Explore Our Services
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button variant="secondary">
+                Contact Us
+              </Button>
+            </Link>
+          </div>
+          
+          <div className="mt-16 flex flex-wrap items-center gap-6 text-white">
+            <div className="flex items-center">
+              <div className="h-10 w-10 rounded-full bg-yellow-600 flex items-center justify-center mr-3">
+                <Shield size={18} />
+              </div>
+              <div>
+                <span className="block text-sm text-gray-300">Protection</span>
+                <span className="font-medium">24/7 Security</span>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="h-10 w-10 rounded-full bg-yellow-600 flex items-center justify-center mr-3">
+                <Users size={18} />
+              </div>
+              <div>
+                <span className="block text-sm text-gray-300">Experience</span>
+                <span className="font-medium">Trained Professionals</span>
+              </div>
+            </div>
+            
+            <div className="flex items-center">
+              <div className="h-10 w-10 rounded-full bg-yellow-600 flex items-center justify-center mr-3">
+                <Target size={18} />
+              </div>
+              <div>
+                <span className="block text-sm text-gray-300">Response</span>
+                <span className="font-medium">Fast & Efficient</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Carousel indicators */}
+      <div className="absolute bottom-6 left-0 right-0 flex justify-center gap-2 z-20">
+        {carouselImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              index === currentSlide ? 'bg-yellow-600' : 'bg-gray-400'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const Hero2 = () => (
   <section id="home" className="relative min-h-screen flex items-center bg-gray-900 overflow-hidden">
     {/* Background image would be placed here */}
     <div className="absolute inset-0 bg-black/50 z-0"></div>
     
     <div className="container mx-auto px-4 relative z-10">
       <div className="max-w-3xl">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-          Precision and Vigilance, Your Shield
+        <span className="inline-block bg-yellow-600 text-white text-sm px-3 py-1 rounded mb-4 font-medium">
+          Professional Security Services
+        </span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Precision and Vigilance, Your Trusted Shield
         </h1>
         <p className="text-xl text-gray-200 mb-8">
-          Omega Protection Services provides integrated security solutions by combining manpower with the latest security technology.
+          Omega Protection Services provides integrated security solutions by combining expert manpower with the latest security technology.
         </p>
         <div className="flex flex-wrap gap-4">
-          <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md transition-colors">
-            Explore Our Services
-          </button>
-          <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-6 rounded-md transition-colors">
-            Contact Us
-          </button>
+          <Link to="/services">
+            <Button variant="primary" icon={<ChevronRight size={16} />}>
+              Explore Our Services
+            </Button>
+          </Link>
+          <Link to="/contact">
+            <Button variant="secondary">
+              Contact Us
+            </Button>
+          </Link>
+        </div>
+        
+        <div className="mt-16 flex flex-wrap items-center gap-6 text-white">
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-yellow-600 flex items-center justify-center mr-3">
+              <Shield size={18} />
+            </div>
+            <div>
+              <span className="block text-sm text-gray-300">Protection</span>
+              <span className="font-medium">24/7 Security</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-yellow-600 flex items-center justify-center mr-3">
+              <Users size={18} />
+            </div>
+            <div>
+              <span className="block text-sm text-gray-300">Experience</span>
+              <span className="font-medium">Trained Professionals</span>
+            </div>
+          </div>
+          
+          <div className="flex items-center">
+            <div className="h-10 w-10 rounded-full bg-yellow-600 flex items-center justify-center mr-3">
+              <Target size={18} />
+            </div>
+            <div>
+              <span className="block text-sm text-gray-300">Response</span>
+              <span className="font-medium">Fast & Efficient</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -223,6 +232,9 @@ const AboutSection = () => (
       
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div>
+          <div className="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded text-sm font-medium mb-4">
+            Established in 2024
+          </div>
           <p className="text-gray-700 mb-4">
             Omega Protection Services is a Zimbabwean African company dedicated to the provision of excellent security services. We are capable of dealing with all your security needs and offer a complete range, planning, system analysis and design as well as executive services.
           </p>
@@ -230,39 +242,41 @@ const AboutSection = () => (
             The company was established in 2024 by a senior Zimbabwean CID boss, who worked as a manager in various organizations and also went onto a freelance career as a specialist consultant in security related projects.
           </p>
           
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-4 mb-8">
             <ValueCard icon={<Target />} title="Precision" />
             <ValueCard icon={<Eye />} title="Vigilance" />
             <ValueCard icon={<Lock />} title="Security" />
             <ValueCard icon={<Users />} title="Experience" />
           </div>
           
-          <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md transition-colors flex items-center">
-            Learn More About Us
-            <ChevronRight size={16} className="ml-2" />
-          </button>
+          <Link to="/about">
+            <Button 
+              variant="primary" 
+              icon={<ChevronRight size={16} />}
+            >
+              Learn More About Us
+            </Button>
+          </Link>
         </div>
         
-        <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center">
-          {/* Image placeholder */}
-          <Shield size={120} className="text-gray-400" />
+        <div className="relative">
+          <div className="bg-gray-200 rounded-lg h-96 flex items-center justify-center relative z-10">
+            {/* Image placeholder */}
+            <img 
+              src="/home1.jpg" // Replace with actual image path for production
+              alt="About Omega Protection Services"
+              className="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <div className="absolute w-full h-full top-4 right-4 rounded-lg border-2 border-yellow-500 -z-0"></div>
         </div>
       </div>
     </div>
   </section>
 );
 
-const ValueCard = ({ icon, title }) => (
-  <div className="bg-gray-50 p-4 rounded-lg border border-gray-100 flex items-center">
-    <div className="p-2 bg-yellow-100 rounded-md text-yellow-600 mr-3">
-      {icon}
-    </div>
-    <h3 className="font-medium">{title}</h3>
-  </div>
-);
-
 const ServicesPreview = () => (
-  <section id="services" className="py-20 bg-gray-50">
+  <section id="services-preview" className="py-20 bg-gray-50">
     <div className="container mx-auto px-4">
       <SectionHeader
         title="Our Services"
@@ -303,27 +317,18 @@ const ServicesPreview = () => (
       </div>
       
       <div className="text-center mt-12">
-        <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md transition-colors flex items-center mx-auto">
-          View All Services
-          <ChevronRight size={16} className="ml-2" />
-        </button>
+        <Link to="/services">
+          <Button 
+            variant="primary" 
+            icon={<ChevronRight size={16} />}
+            className="mx-auto"
+          >
+            View All Services
+          </Button>
+        </Link>
       </div>
     </div>
   </section>
-);
-
-const ServiceCard = ({ icon, title, description }) => (
-  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-    <div className="p-3 bg-yellow-100 rounded-md text-yellow-600 inline-block mb-4">
-      {icon}
-    </div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-    <a href="#" className="mt-4 inline-flex items-center text-yellow-600 font-medium">
-      Learn More
-      <ChevronRight size={16} className="ml-1" />
-    </a>
-  </div>
 );
 
 const FeaturesSection = () => (
@@ -334,59 +339,54 @@ const FeaturesSection = () => (
         subtitle="The Omega Advantage"
       />
       
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <FeatureCard 
-          icon={<Shield />}
-          title="Quality"
-          description="Our relationship with quality is non-negotiable. We embrace desirable values and constructive change."
+      <div className="grid md:grid-cols-3 gap-8">
+        <FeatureCard
+          icon={<Shield size={24} />}
+          title="Professional Team"
+          description="Our security personnel have extensive military or police backgrounds with specialized training in various security operations."
         />
-        <FeatureCard 
-          icon={<UserCheck />}
-          title="Integrity"
-          description="We are guided by truth, honesty and honor in everything we do. We build trust through responsible actions."
+        <FeatureCard
+          icon={<Target size={24} />}
+          title="Quick Response"
+          description="Equipped with state-of-the-art technology, our reaction teams provide fast and efficient response to security threats."
         />
-        <FeatureCard 
-          icon={<Target />}
-          title="Dedication"
-          description="Contract compliance at all times and highly committed towards achieving our goals."
+        <FeatureCard
+          icon={<Lock size={24} />}
+          title="Tailored Solutions"
+          description="We create customized security plans based on thorough risk assessments to meet your specific needs."
         />
-        <FeatureCard 
-          icon={<Award />}
-          title="Training"
-          description="We believe in constantly training our guards and employees to always stay updated and produce best outcomes."
+        <FeatureCard
+          icon={<Bell size={24} />}
+          title="Advanced Technology"
+          description="Our security services incorporate the latest technology including AI surveillance systems and emergency response tools."
+        />
+        <FeatureCard
+          icon={<Users size={24} />}
+          title="Special Operations"
+          description="Our Special Operations Teams provide tactical intervention and support in complex security situations."
+        />
+        <FeatureCard
+          icon={<Award size={24} />}
+          title="Accredited Standards"
+          description="Our training and operations meet the highest industry standards and compliance requirements."
         />
       </div>
     </div>
   </section>
 );
 
-const FeatureCard = ({ icon, title, description }) => (
-  <div className="text-center p-6">
-    <div className="p-4 bg-yellow-100 rounded-full text-yellow-600 inline-block mb-4">
-      {icon}
-    </div>
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600">{description}</p>
-  </div>
-);
-
 const CTASection = () => (
-  <section className="py-16 bg-gray-900 text-white">
-    <div className="container mx-auto px-4">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Secure Your Property?</h2>
-        <p className="text-gray-300 mb-8">
-          Contact us today to discuss your security needs and how we can help protect what matters most to you.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <button className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md transition-colors">
-            Get a Free Consultation
-          </button>
-          <button className="bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold py-3 px-6 rounded-md transition-colors">
-            View Services
-          </button>
-        </div>
-      </div>
+  <section className="py-20 bg-gray-900 text-white">
+    <div className="container mx-auto px-4 text-center">
+      <h2 className="text-3xl font-bold mb-4">Need a Security Consultation?</h2>
+      <p className="text-lg max-w-2xl mx-auto mb-8">
+        Our team of experts is ready to assess your security needs and provide tailored solutions for your home or business.
+      </p>
+      <Link to="/contact">
+        <Button variant="primary" className="mx-auto">
+          Request a Free Consultation
+        </Button>
+      </Link>
     </div>
   </section>
 );
@@ -396,356 +396,106 @@ const TestimonialsSection = () => (
     <div className="container mx-auto px-4">
       <SectionHeader
         title="Client Testimonials"
-        subtitle="What Our Clients Say"
+        subtitle="What Our Clients Say About Us"
       />
       
       <div className="grid md:grid-cols-3 gap-6">
         <TestimonialCard
-          name="John Moyo"
-          role="Business Owner"
-          text="Omega's security personnel are professional, vigilant, and responsive. They've significantly improved the security of my business premises."
+          name="Sarah Johnson"
+          role="Property Manager, Sunridge Estates"
+          text="Omega Protection Services has transformed the security of our residential estate. Their guards are professional, well-trained, and always vigilant. Our residents feel safer than ever."
         />
         <TestimonialCard
-          name="Sarah Mutasa"
-          role="Estate Manager"
-          text="We've been using Omega for our residential estate security for the past year. Their team is reliable and their technology integration is impressive."
+          name="David Moyo"
+          role="CEO, Harare Commercial Center"
+          text="Their integrated security approach combining guards and technology has significantly reduced security incidents at our commercial property. Their response time is impressive."
         />
         <TestimonialCard
-          name="David Zimuto"
-          role="School Principal"
-          text="The specialized school security services provided by Omega give us peace of mind. Their officers are well-trained and great with students."
+          name="Grace Mutasa"
+          role="Principal, St. Mary's School"
+          text="As a school, the safety of our students is paramount. Omega's specialized school security division has implemented excellent protocols that give parents peace of mind."
         />
       </div>
     </div>
   </section>
 );
 
-const TestimonialCard = ({ name, role, text }) => (
-  <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
-    <div className="flex items-center mb-4">
-      <Star className="text-yellow-500 h-5 w-5" />
-      <Star className="text-yellow-500 h-5 w-5" />
-      <Star className="text-yellow-500 h-5 w-5" />
-      <Star className="text-yellow-500 h-5 w-5" />
-      <Star className="text-yellow-500 h-5 w-5" />
-    </div>
-    <p className="text-gray-700 italic mb-6">"{text}"</p>
-    <div className="flex items-center">
-      <div className="h-10 w-10 rounded-full bg-gray-200 mr-3 flex items-center justify-center">
-        <Users className="h-6 w-6 text-gray-400" />
-      </div>
-      <div>
-        <h4 className="font-medium">{name}</h4>
-        <p className="text-sm text-gray-500">{role}</p>
-      </div>
-    </div>
-  </div>
-);
-
-// Services Page
-const ServicesPage = () => {
-  return (
-    <div>
-      <PageHeader 
-        title="Our Services" 
-        subtitle="Comprehensive Security Solutions for Every Need" 
+const ContactSection = () => (
+  <section className="py-20 bg-white">
+    <div className="container mx-auto px-4">
+      <SectionHeader
+        title="Contact Us"
+        subtitle="Get in Touch with Our Team"
       />
       
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <ServiceCategory
-            title="Armed Reaction"
-            description="Omega Security Services has an extensive fleet of reaction vehicles covering the residential and commercial areas we serve. Our armed reaction officers undergo stringent tactical training and are equipped with the latest technology."
-            services={[
-              {
-                title: "Armed Escorts",
-                description: "Professional armed escorts for valuable goods, cash-in-transit, and VIP transportation."
-              },
-              {
-                title: "Business Lockups",
-                description: "Secure business premises during closing and opening hours to prevent unauthorized access."
-              },
-              {
-                title: "Special Operations Teams",
-                description: "Highly trained teams that support Armed Reaction and Guarding divisions for specialized security needs."
-              },
-              {
-                title: "VIP Protection",
-                description: "Dedicated protection services for executives, dignitaries, and high-profile individuals."
-              }
-            ]}
+      <div className="grid md:grid-cols-2 gap-12">
+        <div className="space-y-8">
+          <ContactInfoCard
+            icon={<MapPin size={24} />}
+            title="Our Location"
+            details={["1123 Pearl Street", "Mt Pleasant, Harare"]}
           />
-          
-          <ServiceCategory
-            title="Guarding Services"
-            description="We provide physical guarding services with both armed and unarmed security officers for the commercial, residential, retail, and educational sectors."
-            services={[
-              {
-                title: "Residential Estate Security",
-                description: "Specialized security solutions designed specifically for residential estates and complexes."
-              },
-              {
-                title: "School and Campus Security",
-                description: "Tailored security measures for educational institutions with specially trained officers."
-              },
-              {
-                title: "Special Event Guarding",
-                description: "Security personnel for events ranging from large sporting events and concerts to ad hoc functions."
-              },
-              {
-                title: "Casual and Ad Hoc Guarding",
-                description: "Quality guarding services for short and long-term postings to meet temporary security needs."
-              }
-            ]}
+          <ContactInfoCard
+            icon={<Phone size={24} />}
+            title="Phone"
+            details={["+263 772 754 460", "+263 784 173 770"]}
           />
-          
-          <ServiceCategory
-            title="Specialty Services"
-            description="Omega Security Services offers a range of specialized security solutions to address specific security concerns and requirements."
-            services={[
-              {
-                title: "Technical Services",
-                description: "Full range of technical installations and services customized for each site's unique requirements."
-              },
-              {
-                title: "Risk Assessments",
-                description: "On-site evaluations of current security measures and potential risk factors by trained assessors."
-              },
-              {
-                title: "Close Protection",
-                description: "Highly trained specialists for the personal protection of individuals requiring special security."
-              },
-              {
-                title: "Online Intelligence",
-                description: "Advanced geographic information systems for tracking and monitoring security operations."
-              }
-            ]}
+          <ContactInfoCard
+            icon={<Mail size={24} />}
+            title="Email"
+            details={["oprosec@gmail.com"]}
           />
-          
-          <ServiceCategory
-            title="Technology Solutions"
-            description="Our state-of-the-art security technology enhances traditional security measures and provides additional layers of protection."
-            services={[
-              {
-                title: "Omega ePOD",
-                description: "Emergency Personal Ops Device providing immediate access to help when needed most."
-              },
-              {
-                title: "Omega App",
-                description: "Mobile application with panic button functionality for quick emergency response."
-              },
-              {
-                title: "Smart Surveillance",
-                description: "Advanced AI-powered CCTV monitoring for remote protection of premises and assets."
-              },
-              {
-                title: "AccessTrack",
-                description: "Cost-effective license scanning solution for visitor information management."
-              }
-            ]}
+          <ContactInfoCard
+            icon={<Clock size={24} />}
+            title="Working Hours"
+            details={["Monday - Friday: 8:00 AM - 5:00 PM", "24/7 Emergency Response"]}
           />
         </div>
-      </section>
-    </div>
-  );
-};
-
-const ServiceCategory = ({ title, description, services }) => (
-  <div className="mb-16 pb-8 border-b border-gray-100">
-    <h2 className="text-3xl font-bold mb-4">{title}</h2>
-    <p className="text-gray-700 mb-8 max-w-3xl">{description}</p>
-    
-    <div className="grid md:grid-cols-2 gap-6">
-      {services.map((service, index) => (
-        <div key={index} className="bg-gray-50 p-6 rounded-lg">
-          <h3 className="text-xl font-semibold mb-2 flex items-center">
-            <ShieldCheck className="h-5 w-5 text-yellow-600 mr-2" />
-            {service.title}
-          </h3>
-          <p className="text-gray-600">{service.description}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-);
-
-// Contact Page
-const ContactPage = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-  
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    alert('Form submitted!');
-  };
-  
-  return (
-    <div>
-      <PageHeader 
-        title="Contact Us" 
-        subtitle="Get in Touch with Our Security Experts" 
-      />
-      
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Send Us a Message</h2>
-              <p className="text-gray-700 mb-8">
-                Have questions about our services or need a customized security solution? Fill out the form below and our team will get back to you shortly.
-              </p>
-              
-              <form onSubmit={handleSubmit}>
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="name" className="block text-gray-700 mb-1">Full Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700 mb-1">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                      required
-                    />
-                  </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-4 mb-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700 mb-1">Phone Number</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="service" className="block text-gray-700 mb-1">Service Interested In</label>
-                    <select
-                      id="service"
-                      name="service"
-                      value={formData.service}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                    >
-                      <option value="">Select a Service</option>
-                      <option value="armed-reaction">Armed Reaction</option>
-                      <option value="guarding">Guarding Services</option>
-                      <option value="speciality">Specialty Services</option>
-                      <option value="technology">Technology Solutions</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
-                
-                <div className="mb-4">
-                  <label htmlFor="message" className="block text-gray-700 mb-1">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows="5"
-                    className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                    required
-                  ></textarea>
-                </div>
-                
-                <button type="submit" className="bg-yellow-600 hover:bg-yellow-700 text-white font-bold py-3 px-6 rounded-md transition-colors flex items-center">
-                  Send Message
-                  <Send size={16} className="ml-2" />
-                </button>
-              </form>
-            </div>
-            
-            <div>
-              <h2 className="text-3xl font-bold mb-6">Contact Information</h2>
-              <p className="text-gray-700 mb-8">
-                Get in touch with us directly through the following contact details or visit our office during business hours.
-              </p>
-              
-              <div className="space-y-6">
-                <ContactInfoCard
-                  icon={<MapPin />}
-                  title="Our Office"
-                  details={["1123 Pearl Street", "Mt Pleasant, Harare", "Zimbabwe"]}
-                />
-                
-                <ContactInfoCard
-                  icon={<Phone />}
-                  title="Phone Numbers"
-                  details={["+263 772 754 460", "+263 784 173 770"]}
-                />
-                
-                <ContactInfoCard
-                  icon={<Mail />}
-                  title="Email Address"
-                  details={["oprosec@gmail.com"]}
-                />
-                
-                <ContactInfoCard
-                  icon={<Clock />}
-                  title="Business Hours"
-                  details={["Monday - Friday: 8:00 AM - 5:00 PM", "Saturday: 9:00 AM - 1:00 PM", "Sunday: Closed"]}
+        
+        <div className="bg-gray-50 p-6 rounded-lg">
+          <h3 className="text-xl font-semibold mb-4">Send Us a Message</h3>
+          <form className="space-y-4">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                <input 
+                  type="text" 
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-yellow-500 focus:border-yellow-500"
+                  placeholder="Your Name"
                 />
               </div>
-              
-              <div className="mt-8 p-6 bg-gray-50 rounded-lg border border-gray-100">
-                <h3 className="font-semibold text-lg mb-2 flex items-center">
-                  <AlertTriangle className="h-5 w-5 text-yellow-600 mr-2" />
-                  Emergency Contact
-                </h3>
-                <p className="text-gray-600 mb-4">For emergencies and urgent security matters, please call our 24/7 Command Centre.</p>
-                <div className="text-xl font-bold text-yellow-600">+263 772 754 460</div>
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                <input 
+                  type="email" 
+                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-yellow-500 focus:border-yellow-500"
+                  placeholder="Your Email"
+                />
               </div>
             </div>
-          </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+              <input 
+                type="text" 
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-yellow-500 focus:border-yellow-500"
+                placeholder="Subject"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+              <textarea 
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-yellow-500 focus:border-yellow-500 h-32"
+                placeholder="Your Message"
+              ></textarea>
+            </div>
+            <Button variant="primary" className="w-full">
+              Send Message
+            </Button>
+          </form>
         </div>
-      </section>
-    </div>
-  );
-};
-
-const ContactInfoCard = ({ icon, title, details }) => (
-  <div className="flex">
-    <div className="p-3 bg-yellow-100 rounded-md text-yellow-600 h-fit">
-      {icon}
-    </div>
-    <div className="ml-4">
-      <h3 className="font-semibold text-lg">{title}</h3>
-      <div className="mt-1 space-y-1">
-        {details.map((detail, index) => (
-          <p key={index} className="text-gray-600">{detail}</p>
-        ))}
       </div>
     </div>
-  </div>
+  </section>
 );
+
+export default HomePage;
