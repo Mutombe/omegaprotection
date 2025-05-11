@@ -1,49 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Shield, Mail, Phone, MapPin, Clock, Menu, X, ChevronRight, 
-  Users, Lock, Eye, Target, Award, UserCheck, ListChecks, 
-  Headphones, MessageSquare, Send, HelpCircle, Bell, Home, 
-  FileText, ShieldCheck, Star, Package, AlertTriangle 
-} from 'lucide-react';
+import { Shield, Mail, Phone, MapPin, Clock, Menu, X, ChevronRight, Users, Lock, Eye, Target, Award, UserCheck, ListChecks, Headphones, MessageSquare, Send, HelpCircle, Bell, Home, FileText, ShieldCheck, Star, Package, AlertTriangle } from 'lucide-react';
 
-
-// Main App Component
-const App = () => {
-  const [currentPage, setCurrentPage] = useState('home');
-  
-  const renderPage = () => {
-    switch(currentPage) {
-      case 'services':
-        return <ServicesPage />;
-      case 'contact':
-        return <ContactPage />;
-      case 'home':
-      default:
-        return <HomePage />;
-    }
-  };
-
-  // For demo purposes - update current page based on hash
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '');
-      if (hash === 'services') setCurrentPage('services');
-      else if (hash === 'contact') setCurrentPage('contact');
-      else setCurrentPage('home');
-    };
-    
-    window.addEventListener('hashchange', handleHashChange);
-    handleHashChange(); // Check initial hash
-    
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
-
-  return (
-    <Layout>
-      {renderPage()}
-    </Layout>
-  );
-};
 // Layout Components
 const Layout = ({ children }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -792,23 +749,3 @@ const ContactInfoCard = ({ icon, title, details }) => (
     </div>
   </div>
 );
-
-const PageHeader = ({ title, subtitle }) => (
-  <section className="py-16 bg-gray-900 text-white">
-    <div className="container mx-auto px-4 text-center">
-      <h1 className="text-4xl font-bold mb-2">{title}</h1>
-      <p className="text-lg">{subtitle}</p>
-    </div>
-  </section>
-);
-
-const SectionHeader = ({ title, subtitle }) => (
-  <div className="text-center mb-12">
-    <h2 className="text-3xl font-bold mb-2">{title}</h2>
-    <p className="text-gray-600">{subtitle}</p>
-  </div>
-);
-
-
-
-export default App;
