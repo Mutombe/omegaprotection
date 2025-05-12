@@ -730,7 +730,7 @@ const ServicesPage = () => {
       <PageHeader 
         title="Our Services" 
         subtitle="Comprehensive security solutions combining manpower with cutting-edge technology for your protection and peace of mind." 
-        image="/api/placeholder/1600/600"
+        image="/about.png"
       />
       
       {/* Floating Quick Nav - Visible on Scroll */}
@@ -1088,8 +1088,7 @@ const ServicesPage = () => {
                 <div className="flex items-start">
                   <Phone size={18} className="text-yellow-600 mr-2 mt-1" />
                   <div>
-                    <p>+263 772 754 460</p>
-                    <p>+263 784 173 770</p>
+                    <p>+263 24 2002737</p>
                   </div>
                 </div>
                 <div className="flex items-start">

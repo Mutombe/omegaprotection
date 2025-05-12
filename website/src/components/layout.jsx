@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
             <div className="flex space-x-4 text-sm">
               <span className="flex items-center">
                 <Phone size={14} className="mr-1" />
-                +263 772 754 460
+                +263 24 2002737
               </span>
               <span className="flex items-center">
                 <Mail size={14} className="mr-1" />
@@ -76,7 +76,7 @@ const Layout = ({ children }) => {
             <div className="flex justify-between items-center">
               <span className="flex items-center text-xs">
                 <Phone size={12} className="mr-1" />
-                +263 772 754 460
+                +263 24 2002737
               </span>
               <div className="flex space-x-2">
                 <a href="https://www.facebook.com/profile.php?id=61571199239629&mibextid=ZbWKwL" className="hover:text-yellow-400 transition-colors">
@@ -130,9 +130,11 @@ const Layout = ({ children }) => {
               <NavLink to="/about" active={isActive('/about')}>About</NavLink>
               <NavLink to="/services" active={isActive('/services')}>Services</NavLink>
               <NavLink to="/contact" active={isActive('/contact')}>Contact</NavLink>
+              <a href='tel:+263242002737'>
               <button className="ml-4 bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-md transition-colors text-sm">
+                <Phone size={16} className="inline-block mr-1" />
                 Emergency Call
-              </button>
+              </button></a>
             </nav>
 
             {/* Mobile Menu Button */}

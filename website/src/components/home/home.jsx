@@ -320,7 +320,7 @@ const ServicesPreview = () => (
         <Link to="/services">
           <Button 
             variant="primary" 
-            icon={<ChevronRight size={16} />}
+            icon={<ChevronRight size={16} />} 
             className="mx-auto"
           >
             View All Services

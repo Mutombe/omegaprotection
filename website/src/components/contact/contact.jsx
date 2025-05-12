@@ -609,7 +609,7 @@ const ContactHero = () => {
     <div className="relative bg-gray-900 pt-16 h-80">
       <div className="absolute inset-0">
         <img 
-          src="/api/placeholder/1600/800" 
+          src="/about.png" 
           alt="Security team" 
           className="w-full h-full object-cover opacity-40"
         />
@@ -651,8 +651,7 @@ const ContactPage = () => {
                     <Phone className="text-yellow-600" size={24} />
                   </div>
                   <h3 className="font-medium mb-1">Phone</h3>
-                  <p className="text-gray-600 text-sm">+263 772 754 460</p>
-                  <p className="text-gray-600 text-sm">+263 784 173 770</p>
+                  <p className="text-gray-600 text-sm">+263 24 2002737</p>
                 </div>
                 
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 flex flex-col items-center text-center">
