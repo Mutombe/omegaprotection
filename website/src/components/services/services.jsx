@@ -202,7 +202,7 @@ const ServicesPage = () => {
         'Bulletproof equipment',
         '24/7 monitoring'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/home3.jpg',
       benefits: [
         'Rapid response time',
         'Highly trained officers',
@@ -222,7 +222,7 @@ const ServicesPage = () => {
         'Shows of force',
         'VIP protection'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/home1m.jpg',
       benefits: [
         'Tactical expertise',
         'Specialized training',
@@ -242,7 +242,7 @@ const ServicesPage = () => {
         'Crowd control',
         'Night & perimeter patrols'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/home3.jpg',
       benefits: [
         'Enhanced surveillance',
         'Superior detection capabilities',
@@ -262,7 +262,7 @@ const ServicesPage = () => {
         'Regular evaluations',
         'Armed backup support'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/home3m.jpg',
       benefits: [
         'Visible security presence',
         'Immediate on-site response',
@@ -282,7 +282,7 @@ const ServicesPage = () => {
         'Site-specific training',
         'Proven aptitude assessments'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/fam4.jpeg',
       benefits: [
         'Peace of mind for residents',
         'Controlled access',
@@ -302,7 +302,7 @@ const ServicesPage = () => {
         'Stringent vetting',
         'Dedicated supervision'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/school.webp',
       benefits: [
         'Safe learning environment',
         'Customized security protocols',
@@ -322,7 +322,7 @@ const ServicesPage = () => {
         'Mobile Control Centers',
         'Surveillance equipment'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/event.jpg',
       benefits: [
         'Comprehensive event protection',
         'Crowd management',
@@ -342,7 +342,7 @@ const ServicesPage = () => {
         '24-hour backup service',
         'Maintenance contracts'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/home1.jpg',
       benefits: [
         'Expert technical support',
         'Latest security technology',
@@ -362,7 +362,7 @@ const ServicesPage = () => {
         'Actionable recommendations',
         'Security gap analysis'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/team.jpeg',
       benefits: [
         'Identify vulnerabilities',
         'Prioritize security needs',
@@ -382,7 +382,7 @@ const ServicesPage = () => {
         'Family protection',
         'Travel security'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/close.jpg',
       benefits: [
         'Personal safety assurance',
         'Discreet protection',
@@ -402,7 +402,7 @@ const ServicesPage = () => {
         'Trend analysis',
         'Resource allocation'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/online.jpg',
       benefits: [
         'Data-driven security',
         'Predictive analysis',
@@ -422,7 +422,7 @@ const ServicesPage = () => {
         'Crime intelligence',
         'Joint operations'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/fam1.jpeg',
       benefits: [
         'Community safety',
         'Crime prevention',
@@ -442,7 +442,7 @@ const ServicesPage = () => {
         'GPS tracking',
         'Simple operation'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/pod.webp',
       benefits: [
         'Instant emergency response',
         'Peace of mind',
@@ -462,7 +462,7 @@ const ServicesPage = () => {
         'Emergency contacts',
         'Quick activation'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/app.webp',
       benefits: [
         'Always accessible',
         'Immediate response',
@@ -482,7 +482,7 @@ const ServicesPage = () => {
         'Asset protection',
         'Advanced analytics'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/smarts.webp',
       benefits: [
         'Reduced false alarms',
         '24/7 automated vigilance',
@@ -502,7 +502,7 @@ const ServicesPage = () => {
         'Remote monitoring',
         'Superior detection'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/alarm.avif',
       benefits: [
         'Reduced false alarms',
         'Real-time verification',
@@ -522,7 +522,7 @@ const ServicesPage = () => {
         'Non-contact screening',
         'Multi-sector applications'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/thermal.webp',
       benefits: [
         'Health safety',
         'Quick screening',
@@ -542,7 +542,7 @@ const ServicesPage = () => {
         'Data collection',
         'Access control'
       ],
-      image: '/api/placeholder/600/400',
+      image: '/accesst.jpg',
       benefits: [
         'Enhanced security',
         'Visitor tracking',
@@ -566,7 +566,7 @@ const ServicesPage = () => {
         'Waterproof design',
         'One-touch activation'
       ],
-      image: '/api/placeholder/500/300'
+      image: '/pod.webp'
     },
     {
       id: 'app',
@@ -581,7 +581,7 @@ const ServicesPage = () => {
         'Emergency contacts',
         'Activity log'
       ],
-      image: '/api/placeholder/500/300'
+      image: '/app.webp'
     },
     {
       id: 'surveillance',
@@ -596,7 +596,7 @@ const ServicesPage = () => {
         'Video recording',
         'Remote access'
       ],
-      image: '/api/placeholder/500/300'
+      image: '/smarts.webp'
     },
     {
       id: 'prime',
@@ -626,7 +626,7 @@ const ServicesPage = () => {
         'Alert system',
         'Data reporting'
       ],
-      image: '/api/placeholder/500/300'
+      image: '/thermal.webp'
     },
     {
       id: 'accesstrack',
@@ -641,7 +641,7 @@ const ServicesPage = () => {
         'Data storage',
         'Reporting tools'
       ],
-      image: '/api/placeholder/500/300'
+      image: '/accesst.jpg'
     }
   ];
 
@@ -1002,7 +1002,7 @@ const ServicesPage = () => {
             </div>
           </div>
           
-          {/* Testimonials Section */}
+          {/* Testimonials Section 
           <div className="mb-16">
             <SectionHeader 
               title="What Our Clients Say" 
@@ -1021,7 +1021,7 @@ const ServicesPage = () => {
                 />
               ))}
             </div>
-          </div>
+          </div>*/}
           
           {/* FAQ Section */}
           <div className="mb-16">

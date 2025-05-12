@@ -115,7 +115,7 @@ const Layout = ({ children }) => {
             {/* Logo */}
             <Link to="/" className="flex items-center group">
               <div className="h-12 w-12 mr-3 relative">
-                <Shield className="h-full w-full text-yellow-600 group-hover:text-yellow-700 transition-colors" />
+              <img src="/logo.png" alt="Logo" className="h-10 w-16" />
                 <div className="absolute inset-0 bg-yellow-400 opacity-0 group-hover:opacity-20 rounded-full transition-opacity"></div>
               </div>
               <div>

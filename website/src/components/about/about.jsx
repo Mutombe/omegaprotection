@@ -350,29 +350,11 @@ const TeamSection = () => {
   
   const teamMembers = [
     {
-      name: "Michael Chikwanha",
+      name: "Kudzai Felix Zveshure",
       position: "Chief Executive Officer",
       bio: "Former senior CID official with extensive experience in counterterrorism and special operations. Leads Omega with strategic vision and deep security expertise.",
-      image: "/api/placeholder/400/400"
+      image: "/felix.jpeg"
     },
-    {
-      name: "Sarah Moyo",
-      position: "Operations Director",
-      bio: "Military background with over 15 years of experience in security operations and management. Oversees all operational aspects of Omega's services.",
-      image: "/api/placeholder/400/400"
-    },
-    {
-      name: "James Mutambara",
-      position: "Training Academy Director",
-      bio: "Former police tactical instructor specializing in security training and development. Leads our accredited Training Academy ensuring highest standards.",
-      image: "/api/placeholder/400/400"
-    },
-    {
-      name: "Grace Nyathi",
-      position: "Technology Solutions Head",
-      bio: "IT security specialist with expertise in implementing advanced security systems and technology integration for comprehensive protection.",
-      image: "/api/placeholder/400/400"
-    }
   ];
   
   return (
