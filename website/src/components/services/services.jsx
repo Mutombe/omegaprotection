@@ -909,8 +909,8 @@ const ServicesPage = () => {
                           <Phone size={18} className="text-yellow-600 mr-3 mt-1" />
                           <div>
                             <p className="font-medium">Call Us</p>
+                            <p className="text-gray-600">+263 24 2002737</p>
                             <p className="text-gray-600">+263 772 754 460</p>
-                            <p className="text-gray-600">+263 784 173 770</p>
                           </div>
                         </div>
                         <div className="flex items-start">
