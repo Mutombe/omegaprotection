@@ -52,7 +52,7 @@ export const ServiceCard = ({ icon, title, description }) => (
     </div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
-    <a href="#" className="mt-4 inline-flex items-center text-yellow-600 font-medium">
+    <a href="/services" className="mt-4 inline-flex items-center text-yellow-600 font-medium">
       Learn More
       <ChevronRight size={16} className="ml-1" />
     </a>
