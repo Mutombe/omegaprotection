@@ -4,6 +4,7 @@ import {
   Shield, Mail, Phone, MapPin, Facebook, 
   Twitter, Linkedin, Instagram, Clock
 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => (
   <footer className="bg-gray-900 text-gray-300">
@@ -24,7 +25,7 @@ const Footer = () => (
           </p>
           <div className="flex space-x-4">
             <SocialIcon icon={<Facebook size={18} />} />
-            <SocialIcon icon={<Twitter size={18} />} />
+            <SocialIcon icon={<FaWhatsapp size={18} />} />
             <SocialIcon icon={<Linkedin size={18} />} />
             <SocialIcon icon={<Instagram size={18} />} />
           </div>

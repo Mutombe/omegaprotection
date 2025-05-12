@@ -39,7 +39,7 @@ const Header = () => {
             background: "linear-gradient(130deg, rgba(18,24,38,0.95) 40%, rgba(18,24,38,0.7) 70%, rgba(18,24,38,0.4) 100%)"
           }}
         ></div>
-        <div className="absolute inset-0 bg-[url('/api/placeholder/1600/900')] bg-cover bg-center opacity-60"></div>
+        <div className="absolute inset-0 bg-[url('/about.png')] bg-cover bg-center opacity-60"></div>
       </div>
       
       <div className="container mx-auto px-4 h-full flex flex-col justify-center relative z-10">
@@ -99,7 +99,7 @@ const CompanyStory = () => {
             <div className="relative">
               <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
                 <img 
-                  src="/api/placeholder/800/600" 
+                  src="/team.jpeg" 
                   alt="Omega Security Team" 
                   className="w-full h-full object-cover"
                 />
@@ -120,7 +120,7 @@ const CompanyStory = () => {
                 Omega Protection Services is a Zimbabwean African company dedicated to the provision of excellent security services. We are capable of dealing with all your security needs and offer a complete range of planning, system analysis, design, and executive services.
               </p>
               <p>
-                The company was established in 2024 by a senior Zimbabwean CID boss with extensive operational experience and specialized expertise in counter-terrorism, anti-guerrilla warfare, special operations, and VIP protection.
+                The company was established in 2024 by a Zimbabwean Former Senior CID Officer with extensive operational experience and specialized expertise in counter-terrorism, anti-guerrilla warfare, special operations, and VIP protection.
               </p>
               <p>
                 All of our senior management has either military or police experience, and this knowledge is passed onto our personnel who continuously acquire the professional skills required to perform their tasks while striving to perfect their personal and collective achievements.
@@ -550,28 +550,28 @@ const TrainingCenter = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/api/placeholder/500/500" 
+                  src="/fam1.jpeg" 
                   alt="Training in progress" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-lg overflow-hidden shadow-lg mt-8">
                 <img 
-                  src="/api/placeholder/500/500" 
+                  src="/fam2.jpeg" 
                   alt="Training facility" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-lg overflow-hidden shadow-lg">
                 <img 
-                  src="/api/placeholder/500/500" 
+                  src="/fam3.jpeg" 
                   alt="Tactical training" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="aspect-square rounded-lg overflow-hidden shadow-lg mt-8">
                 <img 
-                  src="/api/placeholder/500/500" 
+                  src="/fam4.jpeg" 
                   alt="Academy graduates" 
                   className="w-full h-full object-cover"
                 />

@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { 
   Shield, Mail, Phone, MapPin, Clock, Menu, X, ChevronRight,
-  Facebook, Twitter, Linkedin, Instagram
+  Facebook, Twitter, Linkedin, Instagram,
 } from 'lucide-react';
+import { FaWhatsapp } from "react-icons/fa";
 import Footer from './footer/footer';
 
 const Layout = ({ children }) => {
@@ -47,13 +48,13 @@ const Layout = ({ children }) => {
               </span>
             </div>
             <div className="flex space-x-3">
-              <a href="#" className="hover:text-yellow-400 transition-colors">
+              <a href="https://www.facebook.com/profile.php?id=61571199239629&mibextid=ZbWKwL" className="hover:text-yellow-400 transition-colors">
                 <Facebook size={14} />
                 <span className="sr-only">Facebook</span>
               </a>
-              <a href="#" className="hover:text-yellow-400 transition-colors">
-                <Twitter size={14} />
-                <span className="sr-only">Twitter</span>
+              <a href="https://wa.me/263772754460" className="hover:text-yellow-400 transition-colors">
+                <FaWhatsapp size={14} />
+                <span className="sr-only">Whatsapp</span>
               </a>
               <a href="#" className="hover:text-yellow-400 transition-colors">
                 <Linkedin size={14} />
@@ -78,13 +79,13 @@ const Layout = ({ children }) => {
                 +263 772 754 460
               </span>
               <div className="flex space-x-2">
-                <a href="#" className="hover:text-yellow-400 transition-colors">
+                <a href="https://www.facebook.com/profile.php?id=61571199239629&mibextid=ZbWKwL" className="hover:text-yellow-400 transition-colors">
                   <Facebook size={12} />
                   <span className="sr-only">Facebook</span>
                 </a>
-                <a href="#" className="hover:text-yellow-400 transition-colors">
-                  <Twitter size={12} />
-                  <span className="sr-only">Twitter</span>
+                <a href="https://wa.me/263772754460" className="hover:text-yellow-400 transition-colors">
+                  <FaWhatsapp size={12} />
+                  <span className="sr-only">Whatsapp</span>
                 </a>
                 <a href="#" className="hover:text-yellow-400 transition-colors">
                   <Linkedin size={12} />

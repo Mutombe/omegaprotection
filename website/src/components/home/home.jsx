@@ -239,7 +239,7 @@ const AboutSection = () => (
             Omega Protection Services is a Zimbabwean African company dedicated to the provision of excellent security services. We are capable of dealing with all your security needs and offer a complete range, planning, system analysis and design as well as executive services.
           </p>
           <p className="text-gray-700 mb-6">
-            The company was established in 2024 by a senior Zimbabwean CID boss, who worked as a manager in various organizations and also went onto a freelance career as a specialist consultant in security related projects.
+            The company was established in 2024 by a Zimbabwean Former Senior CID Officer, who worked as a manager in various organizations and also went onto a freelance career as a specialist consultant in security related projects.
           </p>
           
           <div className="grid grid-cols-2 gap-4 mb-8">
