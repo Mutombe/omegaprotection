@@ -293,7 +293,7 @@ const ContactInfo = () => {
           </div>
           <div>
             <h4 className="font-medium">Email Address</h4>
-            <p className="text-gray-300 text-sm mt-1">oprosec@gmail.com</p>
+            <p className="text-gray-300 text-sm mt-1">admin@omegaprotection.co.zw</p>
           </div>
         </div>
         
@@ -659,7 +659,7 @@ const ContactPage = () => {
                     <Mail className="text-yellow-600" size={24} />
                   </div>
                   <h3 className="font-medium mb-1">Email</h3>
-                  <p className="text-gray-600 text-sm">oprosec@gmail.com</p>
+                  <p className="text-gray-600 text-sm">admin@omegaprotection.co.zw</p>
                 </div>
                 
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200 flex flex-col items-center text-center">

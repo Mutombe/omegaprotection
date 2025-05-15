@@ -44,7 +44,7 @@ const Layout = ({ children }) => {
               </span>
               <span className="flex items-center">
                 <Mail size={14} className="mr-1" />
-                oprosec@gmail.com
+                admin@omegaprotection.co.zw
               </span>
             </div>
             <div className="flex space-x-3">
@@ -99,7 +99,7 @@ const Layout = ({ children }) => {
             </div>
             <span className="flex items-center text-xs">
               <Mail size={12} className="mr-1" />
-              oprosec@gmail.com
+              admin@omegaprotection.co.zw
             </span>
           </div>
         </div>
@@ -158,11 +158,13 @@ const Layout = ({ children }) => {
                 <MobileNavLink to="/services">Services</MobileNavLink>
                 <MobileNavLink to="/contact">Contact</MobileNavLink>
                 
+                <a href='tel:+263242002737'>
                 <div className="pt-2 mt-2 border-t border-gray-100">
                   <button className="w-full bg-yellow-600 hover:bg-yellow-700 text-white font-medium py-2 px-4 rounded-md transition-colors text-sm mb-3">
                     Emergency Call
                   </button>
                 </div>
+                </a>
               </nav>
             </div>
           </div>
